@@ -1,13 +1,29 @@
 # Finish the implementation of the Car class so it has the functionality described below
 
 class Car
+  attr_reader :make, :model
+
+  ALL = []
+
+  def initialize (make,model)
+    @make = make
+    @model = model
+    ALL << self
+  end
+
+  def drive
+    puts "VROOOOOOOOOOOOM!"
+
+  end
 
 
-
+  def self.all
+    ALL
+  end
 end
 
 car = Car.new("volvo", "lightening")
-car.make
+puts car.make
 #=> "volvo"
 car.model
 #=> "ligthening"
@@ -20,9 +36,11 @@ Car.all
 
 BONUS:
 
-Car.new(make: "volvo", model: "lightening")
+car = Car.new(make: "volvo", model: "lightening")
 
-car.make
+# def initialize (make:,model:)
+
+puts car.make
 #=> "volvo"
-car.model
+puts car.model
 #=> "ligthening"
